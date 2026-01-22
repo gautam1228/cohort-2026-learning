@@ -11,3 +11,4 @@ function multiply(a, b) {
 
 multiply(2, 3)
 multiply(20, 3)
+multiply(31, 32)
