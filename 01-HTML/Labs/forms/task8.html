@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autocomplete</title>
+  </head>
+  <body>
+    <h1>Course Search</h1>
+    <!-- Create input with datalist -->
+     <form>
+        <label><strong>State:</strong></label>
+        <input list="states" name="state" id="state" placeholder="Start Typing"/>
+
+        <datalist id="states">
+            <option value="Delhi"></option>
+            <option value="Rajasthan"></option>
+            <option value="Assam"></option>
+            <option value="Karnataka"></option>
+            <option value="Telangana"></option>
+        </datalist>
+
+        <button type="submit">Submit</button>
+     </form>
+  </body>
+</html>

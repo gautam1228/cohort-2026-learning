@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>File Upload</title>
+    </head>
+    <body>
+        <h1>ChaiCode Project Submission</h1>
+        <!-- Create a form with file upload -->
+        <form>
+            <label for="file_input"><strong>File:</strong></label>
+            <input
+                type="file"
+                id="file_input"
+                name="file_input"
+                accept=".pdf, .docx, .pptx"
+            /><br /><br />
+            
+            <label for="file_input"><strong>Multiple Files:</strong></label>
+            <input
+                type="file"
+                id="files_input"
+                name="files_input"
+                accept=".pdf, .docx, .pptx"
+                multiple
+            /><br /><br />
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
