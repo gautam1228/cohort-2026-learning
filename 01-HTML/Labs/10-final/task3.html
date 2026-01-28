@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Registration</title>
+    </head>
+    <body>
+        <h1>ChaiCode Registration</h1>
+        <!-- Create form -->
+        <form action="/register" method="post">
+            <fieldset>
+                <legend>User Information:</legend>
+                <label for="name"><em>Name</em></label><br />
+                <input id="name" type="text" placeholder="John Doe" />
+
+                <br /><br />
+
+                <label for="email"><em>Email</em></label><br />
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="john@doe.com"
+                    required
+                />
+
+                <br /><br />
+
+                <label for="password"><em>Password</em></label><br />
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="johndoe123"
+                    required
+                />
+
+                <br /><br />
+
+                <label for="age"><em>Age</em></label><br />
+                <input
+                    id="age"
+                    type="number"
+                    placeholder="18"
+                    max="65"
+                    min="18"
+                />
+
+                <br /><br />
+
+                <label for="dob"><em>DOB</em></label><br />
+                <input id="dob" type="date" required />
+
+                <br /><br />
+
+                <legend><em>Gender:</em></legend>
+                <br />
+                <input
+                    type="radio"
+                    id="gender-male"
+                    name="gender"
+                    value="male"
+                />
+                <label for="gender-male">Male</label>
+
+                <input
+                    type="radio"
+                    id="gender-female"
+                    name="gender"
+                    value="female"
+                />
+                <label for="gender-female">Female</label>
+
+                <input
+                    type="radio"
+                    id="gender-na"
+                    name="gender"
+                    value="na"
+                />
+                <label for="gender-na">Prefer Not to Say</label>
+                <br /><br />
+
+                <fieldset>
+                    <legend><em>Interests:</em></legend>
+                    <br />
+
+                    <input
+                        type="checkbox"
+                        id="sports"
+                        name="interests[]"
+                        value="sports"
+                    />
+                    <label for="sports">Sports</label>
+
+                    <input
+                        type="checkbox"
+                        id="gaming"
+                        name="interests[]"
+                        value="gaming"
+                    />
+                    <label for="gaming">Gaming</label>
+
+                    <input
+                        type="checkbox"
+                        id="music"
+                        name="interests[]"
+                        value="music"
+                    />
+                    <label for="music">Music</label>
+                    <br /><br />
+                </fieldset>
+                <br /><br />
+
+                <label for="state"><em>State</em></label><br />
+                <select id="state" name="state">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Delhi">Karnataka</option>
+                    <option value="Delhi">Rajasthan</option>
+                    <option value="Delhi">Assam</option>
+                </select>
+                <br /><br />
+                
+                <label for="bio">About You</label><br/>
+                <textarea id="bio" name="bio" placeholder="Please tell us more about yourself ..." rows="7" cols="30"></textarea>
+                
+                <br /><br />
+
+                <label for="resume">Resume</label><br/>
+                <input id="resume" type="file" accept=".pdf,.docx" name="resume"/>
+
+                <br /><br />
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

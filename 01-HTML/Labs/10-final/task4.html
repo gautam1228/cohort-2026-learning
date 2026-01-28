@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Product Page</title>
+        <style>
+            table {
+                border: 1px solid black;
+            }
+            th,
+            td {
+                border: 1px dashed black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ChaiCode Premium Course</h1>
+        <!-- Build product page -->
+        <header>
+            <h2>Product Showcase Page</h2>
+        </header>
+        <main>
+            <section id="prod1">
+                <label for="prod1"><h3>First Product</h3></label><br />
+                <figure>
+                    <img
+                        id="prod1"
+                        src="product1_img.jpg"
+                        width="300"
+                        height="200"
+                        alt="Prod1 image"
+                    />
+                    <figcaption>Prod 1 Image</figcaption>
+                </figure>
+                <br /><br />
+
+                <label>Specifications:</label>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Warranty</th>
+                    </tr>
+                    <tr>
+                        <td>Wires</td>
+                        <td>2</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Box</td>
+                        <td>3</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Cleaning Cloth</td>
+                        <td>1</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+                <br /><br />
+
+                <label for="features_prod1">Features:</label>
+                <ul id="features_prod1">
+                    <li>Long Lasting</li>
+                    <li>Water Proof</li>
+                    <li>Low Maintenance</li>
+                </ul>
+                <br /><br />
+
+                <label for="product1_demo_video">Demo Video:</label><br />
+                <video width="320" height="130" controls>
+                    <source src="prod1.mp4" type="video/mp4" />
+                    This video is not supported by your browser
+                </video>
+
+                <br /><br />
+
+                <form action="/buy-prod1" method="post">
+                    <fieldset>
+                        <legend>Buy Prod 1:</legend>
+
+                        <label for="address">Address: </label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="India Gate, New Delhi - 01"
+                        />
+                        <br /><br />
+
+                        <label for="quantity">Quantity: </label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            placeholder="1"
+                            min="1"
+                            max="5"
+                        />
+                        <br /><br />
+
+                        <button type="submit">Buy</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <br />
+            <hr />
+            <br />
+
+            <section id="prod2">
+                <label for="prod2"><h3>Second Product</h3></label><br />
+                <figure>
+                    <img
+                        id="prod2"
+                        src="product2_img.jpg"
+                        width="300"
+                        height="200"
+                        alt="Prod2 image"
+                    />
+                    <figcaption>Prod 2 Image</figcaption>
+                </figure>
+                <br /><br />
+
+                <label>Specifications:</label>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Warranty</th>
+                    </tr>
+                    <tr>
+                        <td>Wires</td>
+                        <td>1</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Box</td>
+                        <td>2</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Cleaning Cloth</td>
+                        <td>2</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+                <br /><br />
+
+                <label for="features_prod2">Features:</label>
+                <ul id="features_prod2">
+                    <li>Dust Proof</li>
+                    <li>Long Lasting</li>
+                </ul>
+                <br /><br />
+
+                <label for="product2_demo_video">Demo Video:</label><br />
+                <video width="320" height="130" controls>
+                    <source src="prod2.mp4" type="video/mp4" />
+                    This video is not supported by your browser
+                </video>
+
+                <br /><br />
+
+                <form action="/buy-prod2" method="post">
+                    <fieldset>
+                        <legend>Buy Prod 2:</legend>
+
+                        <label for="address">Address: </label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="India Gate, New Delhi - 01"
+                        />
+                        <br /><br />
+
+                        <label for="quantity">Quantity: </label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            placeholder="1"
+                            min="1"
+                            max="5"
+                        />
+                        <br /><br />
+
+                        <button type="submit">Buy</button>
+                    </fieldset>
+                </form>
+            </section>
+            <section id="prod3">
+                <label for="prod3"><h3>Third Product</h3></label><br />
+                <figure>
+                    <img
+                        id="prod3"
+                        src="product3_img.jpg"
+                        width="300"
+                        height="200"
+                        alt="Prod3 image"
+                    />
+                    <figcaption>Prod 3 Image</figcaption>
+                </figure>
+                <br /><br />
+
+                <label>Specifications:</label>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Warranty</th>
+                    </tr>
+                    <tr>
+                        <td>Wires</td>
+                        <td>12</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Box</td>
+                        <td>2</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Cleaning Cloth</td>
+                        <td>1</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+                <br /><br />
+
+                <label for="features_prod3">Features:</label>
+                <ul id="features_prod3">
+                    <li>Dust Proof</li>
+                    <li>Long Lasting</li>
+                </ul>
+                <br /><br />
+
+                <label for="product3_demo_video">Demo Video:</label><br />
+                <video width="320" height="130" controls>
+                    <source src="prod3.mp4" type="video/mp4" />
+                    This video is not supported by your browser
+                </video>
+
+                <br /><br />
+
+                <form action="/buy-prod3" method="post">
+                    <fieldset>
+                        <legend>Buy Prod 3:</legend>
+
+                        <label for="address">Address: </label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="India Gate, New Delhi - 01"
+                        />
+                        <br /><br />
+
+                        <label for="quantity">Quantity: </label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            placeholder="1"
+                            min="1"
+                            max="3"
+                        />
+                        <br /><br />
+
+                        <button type="submit">Buy</button>
+                    </fieldset>
+                </form>
+            </section>
+            <br/>
+            <br/>
+            <section id="prod4">
+                <label for="prod4"><h3>Fourth Product</h3></label><br />
+                <figure>
+                    <img
+                        id="prod4"
+                        src="product4_img.jpg"
+                        width="300"
+                        height="200"
+                        alt="Prod4 image"
+                    />
+                    <figcaption>Prod 4 Image</figcaption>
+                </figure>
+                <br /><br />
+
+                <label>Specifications:</label>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Warranty</th>
+                    </tr>
+                    <tr>
+                        <td>Wires</td>
+                        <td>5</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Box</td>
+                        <td>4</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Cleaning Cloth</td>
+                        <td>0</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+                <br /><br />
+
+                <label for="features_prod2">Features:</label>
+                <ul id="features_prod2">
+                    <li>Dust Proof</li>
+                    <li>Long Lasting</li>
+                    <li>Low Cost</li>
+                </ul>
+                <br /><br />
+
+                <label for="product4_demo_video">Demo Video:</label><br />
+                <video width="320" height="130" controls>
+                    <source src="prod4.mp4" type="video/mp4" />
+                    This video is not supported by your browser
+                </video>
+
+                <br /><br />
+
+                <form action="/buy-prod4" method="post">
+                    <fieldset>
+                        <legend>Buy Prod 4:</legend>
+
+                        <label for="address">Address: </label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="India Gate, New Delhi - 01"
+                        />
+                        <br /><br />
+
+                        <label for="quantity">Quantity: </label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            placeholder="1"
+                            min="1"
+                            max="7"
+                        />
+                        <br /><br />
+
+                        <button type="submit">Buy</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <hr />
+        <footer>All Rights Reserved</footer>
+    </body>
+</html>
