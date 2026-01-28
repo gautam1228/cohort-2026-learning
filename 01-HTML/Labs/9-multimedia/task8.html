@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ChaiCode Multimedia</title>
+    </head>
+    <body>
+        <h1>ChaiCode Media Center</h1>
+
+        <h2>Tutorial with Captions</h2>
+        <video width="320" height="240" controls>
+            <source src="video.mp4" type="video/mp4" />
+            <track
+                src="subtitles.vtt"
+                kind="subtitles"
+                srclang="en"
+                label="English"
+            />
+            This video is not supported in your browser.
+        </video><br/><br/>
+
+        <h2>Chaicode Podcast</h2>
+        <audio controls>
+            <source src="podcast.mp4" type="audio/mpeg" />
+            This audio is not supported in your browser.
+        </audio><br/><br/>
+
+        <iframe
+            id="chaicode_yt_iframe"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/bTvCq5td-SI?si=ZWwyQjoCDKObcY8f"
+            title="Chaicode YouTube video player"
+            frameborder="0"
+            allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe><br/><br/>
+
+        <svg width="300" height="130">
+            <rect width="200" height="100" x="10" y="10" rx="20" ry="20" stroke="orange" stroke-width="2px" fill="yellow" />
+        </svg><br/><br/>
+
+        <canvas width="300" height="" style="border: 1px dashed orange;"></canvas>
+    </body>
+</html>
