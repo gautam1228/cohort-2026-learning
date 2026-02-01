@@ -1,0 +1,30 @@
+#parent {
+    border: 2px solid red;
+    width: 80vw;
+    height: 350px;
+}
+
+.child {
+    border: 2px solid blue;
+
+    height: 40px;
+    width: 40px;
+}
+
+#parent {
+    display: flex;
+    /* flex-direction: column; */
+    /* Row - Main Axis L -> R */
+    justify-content: start;
+    align-items: start;
+}
+
+.child-1 {
+    flex: 2;
+    order: 1;
+}
+
+.child-2 {
+    flex: 1;
+    /* align-self: flex-end; */
+}
