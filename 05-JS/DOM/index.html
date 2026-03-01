@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Adding the code like this throws an error, since this loads before the DOM is loaded -->
+    <!-- <script>
+        // console.log(window.document); // This is the DOM
+        //const buttonRef = window.document.getElementById("clickbtn");
+        //buttonRef.remove();
+        //buttonRef = null; // Freeing the memory (GC will rmeove it from memory as it points to null)
+        // Adding this improves the performance
+    </script> -->
+</head>
+<body>
+    <button id="clickbtn">
+        Click me
+    </button>
+    <script>
+        // console.log(window.document); // This is the DOM
+        const buttonRef = window.document.getElementById("clickbtn");
+        buttonRef.addEventListener("click", () => {
+            console.log("Button was clicked.");
+        });
+        buttonRef.removeEventListener("click");
+        // buttonRef.remove();
+        buttonRef = null; // Freeing the memory (GC will rmeove it from memory as it points to null)
+        // Adding this improves the performance
+        
+    </script>
+</body>
+</html>
