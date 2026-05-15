@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WS-Checkboxes</title>
+        <style>
+            :root {
+                --bg: #0f0f10;
+                --surface: #1a1a1c;
+                --surface-elevated: #222225;
+                --border: #2e2e32;
+                --text: #ececed;
+                --muted: #8a8a90;
+                --accent: #e5e5e7;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                min-height: 100vh;
+                background-color: var(--bg);
+                color: var(--text);
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    "Inter", Roboto, Helvetica, Arial, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 32px 32px 48px;
+            }
+
+            header {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+                margin: 0 0 8px 0;
+                color: var(--text);
+            }
+
+            header p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 14px;
+            }
+
+            #container {
+                width: 100%;
+                background-color: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 16px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(18px, 1fr));
+                gap: 6px;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02) inset,
+                    0 8px 24px rgba(0, 0, 0, 0.4);
+            }
+
+            #container input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                margin: 0;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                background-color: var(--surface-elevated);
+                border: 1px solid var(--border);
+                border-radius: 3px;
+                cursor: pointer;
+                position: relative;
+                transition: background-color 120ms ease, border-color 120ms ease,
+                    transform 80ms ease;
+            }
+
+            #container input[type="checkbox"]:hover {
+                border-color: #4a4a50;
+                background-color: #2a2a2e;
+            }
+
+            #container input[type="checkbox"]:active {
+                transform: scale(0.92);
+            }
+
+            #container input[type="checkbox"]:focus-visible {
+                outline: 1px solid var(--accent);
+                outline-offset: 1px;
+            }
+
+            #container input[type="checkbox"]:checked {
+                background-color: var(--accent);
+                border-color: var(--accent);
+            }
+
+            #container input[type="checkbox"]:checked::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 46%;
+                width: 32%;
+                height: 60%;
+                border: solid #0f0f10;
+                border-width: 0 2px 2px 0;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            footer {
+                margin-top: 24px;
+                color: var(--muted);
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>CheckBoxes</h1>
+            <p>
+                A shared grid of checkboxes synced in real time.
+            </p>
+        </header>
+        <div id="container"></div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            const container = document.getElementById("container");
+            const CHECKBOX_COUNT = 500;
+
+            socket.on("server:checkbox:change", (data) => {
+                // console.log(`Socket Server Event`, data);
+                const { index, checked } = data;
+
+                const inputToBeChanged = document.getElementById(`checkbox-${index}`);
+                if (inputToBeChanged) {
+                    inputToBeChanged.checked = checked;
+                }
+            });
+
+            window.addEventListener("load", async () => {
+                const res = await fetch("/checkboxes", { method: "GET" });
+                const data = await res.json();
+
+                if (data && data.checkboxes) {
+                    data.checkboxes.forEach((checkedState, index) => {
+                        const input = document.createElement("input");
+                        input.id = `checkbox-${index}`;
+                        input.type = "checkbox";
+
+                        input.checked = checkedState;
+
+                        input.addEventListener("change", (event) => {
+                            const checked = event.target.checked;
+                            // console.log("Checkbox changed ", { index, checked });
+                            socket.emit("client:checkbox:change", { index, checked });
+                        });
+
+                        container.appendChild(input);
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
