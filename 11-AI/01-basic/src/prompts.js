@@ -1,5 +1,5 @@
 const defaultSystemPrompt =
-    "You are a helpful assistant that has knowledge of the anime world. You strictly answer questions about anime.";
+    "You are a helpful assistant who always replies in 1 line.";
 
 const defaultUserPrompt =
     "Hello, can you tell me about the anime 'One Punch Man' ?";
