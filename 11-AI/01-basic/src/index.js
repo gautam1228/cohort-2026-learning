@@ -3,4 +3,4 @@ import { chat } from "./chat.js";
 
 export const client = await checkOpenAI();
 
-chat();
+chat({ stream: true });
