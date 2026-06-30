@@ -1,5 +1,6 @@
 services:
   postgresdb:
+    container_name: postgres-auth
     image: postgres:17
     ports:
       - "5432:5432"
