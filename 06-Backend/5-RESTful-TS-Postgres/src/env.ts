@@ -11,6 +11,7 @@ const envSchema = z.object({
         .enum(NODE_ENVS)
         .default("development")
         .describe("Environment in which your current application is running"),
+    DATABASE_URL: z.string().describe("Postgres DB connection URL"),
 });
 
 function createEnv(env: NodeJS.ProcessEnv) {
