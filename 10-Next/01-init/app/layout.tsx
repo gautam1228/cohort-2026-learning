@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const bricolageGrotesque = Bricolage_Grotesque({
+    variable: "--font-bricolage-grotesque",
     subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+    variable: "--font-space-mono",
     subsets: ["latin"],
+    weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,10 +26,9 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${bricolageGrotesque.variable} ${spaceMono.variable} h-full antialiased`}
         >
-            
-            <body className="min-h-full flex flex-col">
+            <body className="min-h-full flex flex-col font-sans">
                 <h1>Header</h1>
                 {children}
                 <h1>Footer</h1>
