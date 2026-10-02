@@ -4,7 +4,7 @@ import express from "express";
 import { createTodo, getTodo, updateTodo, deleteTodo } from "./store.js";
 import { serve } from "inngest/express";
 import { inngest } from "./inngest/client.js";
-import { onTodoCreated } from "./inngest/functions.js";
+import { onTodoCreated, onTodoDeleted } from "./inngest/functions.js";
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(
     "/api/inngest",
     serve({
         client: inngest,
-        functions: [onTodoCreated],
+        functions: [onTodoCreated, onTodoDeleted],
     }),
 );
 
@@ -31,7 +31,7 @@ app.post("/todos", async (req, res) => {
 });
 
 app.get("/todos/:id", (req, res) => {
-    const { id } = req.params;
+    const id = parseInt(req.params.id);
     if (isNaN(id)) {
         return res.status(400).json({ error: "Invalid ID" });
     }
@@ -43,7 +43,7 @@ app.get("/todos/:id", (req, res) => {
 });
 
 app.put("/todos/:id", (req, res) => {
-    const { id } = req.params;
+    const { id } = parseInt(req.params);
     if (isNaN(id)) {
         return res.status(400).json({ error: "Invalid ID" });
     }
@@ -54,8 +54,8 @@ app.put("/todos/:id", (req, res) => {
     res.status(200).json(todo);
 });
 
-app.delete("/todos/:id", (req, res) => {
-    const { id } = req.params;
+app.delete("/todos/:id", async (req, res) => {
+    const id = parseInt(req.params);
     if (isNaN(id)) {
         return res.status(400).json({ error: "Invalid ID" });
     }
@@ -63,7 +63,11 @@ app.delete("/todos/:id", (req, res) => {
     if (!todo) {
         return res.status(404).json({ error: "Todo not found" });
     }
-    res.status(204).send();
+    await inngest.send({
+        name: "todo/deleted",
+        data: { todo },
+    });
+    res.status(200).json(todo);
 });
 
 app.listen(3000, () => {
