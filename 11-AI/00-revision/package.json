@@ -20,6 +20,8 @@
     "type": "module",
     "dependencies": {
         "dotenv": "^18.0.3",
+        "express": "^5.2.1",
+        "inngest": "^4.21.0",
         "openai": "^7.23.0"
     }
 }
