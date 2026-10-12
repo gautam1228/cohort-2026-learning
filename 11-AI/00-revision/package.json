@@ -19,6 +19,7 @@
     "packageManager": "pnpm@11.23.0",
     "type": "module",
     "dependencies": {
+        "@inngest/ai": "^0.1.8",
         "dotenv": "^18.0.3",
         "express": "^5.2.1",
         "inngest": "^4.21.0",

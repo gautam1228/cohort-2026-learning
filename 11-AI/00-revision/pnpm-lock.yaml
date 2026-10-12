@@ -207,6 +207,9 @@ importers:
 
   .:
     dependencies:
+      '@inngest/ai':
+        specifier: ^0.1.8
+        version: 0.1.8
       dotenv:
         specifier: ^18.0.3
         version: 18.0.3
